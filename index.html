@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | JJB Tech Consulting</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-jjb py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/Logotipo.png" alt="Logotipo completo y claro de JJB Tech Consulting" width="120">
+                    <h1 class="mb-0">JJB Tech Consulting</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                    <ul class="navbar-nav gap-3">
+                        <li class="nav-item"><a href="index.html" class="nav-link active">Inicio</a></li>
+                        <li class="nav-item"><a href="nosotros.html" class="nav-link">Expertiz</a></li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link">Cotizar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        
+        <section class="row align-items-center mb-5 text-center text-md-start">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h2 class="display-5 fw-bold text-dark mb-4">Estrategia, desarrollo y Marketing para escalar tu negocio digital.</h2>
+                <p class="lead mb-4">Soluciones de ingeniería de software creadas por José, Bernabé y Jonathan con enfoque en conversión y escalabilidad. Transformamos tu visión en activos digitales de alto rendimiento.</p>
+                <a href="contacto.html" class="btn btn-jjb btn-lg">Iniciar Proyecto</a>
+            </div>
+            
+            <div class="col-md-6">
+                <div id="carruselJJB" class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="img/Grupo_desarrollo.png" class="d-block w-100 carrusel-img" alt="Equipo de desarrollo trabajando">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="img/Grupo_coorporativo.png" class="d-block w-100 carrusel-img" alt="Equipo corporativo reunido">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselJJB" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselJJB" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 text-center">
+            <h3 class="fw-bold mb-5">Nuestras Áreas de Especialidad</h3>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <article class="card card-jjb p-4 h-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="70" height="70" class="mb-3 mx-auto d-block">
+                            <circle cx="50" cy="50" r="50" fill="#2563EB"/>
+                            <rect x="25" y="30" width="50" height="30" rx="4" fill="none" stroke="#ffffff" stroke-width="5"/>
+                            <line x1="35" y1="70" x2="65" y2="70" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                            <line x1="50" y1="60" x2="50" y2="70" stroke="#ffffff" stroke-width="5"/>
+                            <path d="M35 40 L45 50 L35 60" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <h4>Full-Stack Dev</h4>
+                        <p class="text-muted mt-2 mb-0">Sistemas web robustos, e-commerce y plataformas construidas bajo estándares de Clean Code.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="card card-jjb p-4 h-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="70" height="70" class="mb-3 mx-auto d-block">
+                            <circle cx="50" cy="50" r="50" fill="#2563EB"/>
+                            <circle cx="50" cy="30" r="6" fill="#ffffff"/>
+                            <circle cx="30" cy="65" r="6" fill="#ffffff"/>
+                            <circle cx="70" cy="65" r="6" fill="#ffffff"/>
+                            <path d="M50 36 L34 60 M50 36 L66 60 M36 65 L64 65" stroke="#ffffff" stroke-width="4"/>
+                        </svg>
+                        <h4>Consultoría TICs</h4>
+                        <p class="text-muted mt-2 mb-0">Auditoría, digitalización y optimización de infraestructura tecnológica para empresas.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="card card-jjb p-4 h-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="70" height="70" class="mb-3 mx-auto d-block">
+                            <circle cx="50" cy="50" r="50" fill="#2563EB"/>
+                            <path d="M25 70 L40 50 L55 60 L75 30" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polygon points="75,30 60,30 75,45" fill="#ffffff"/>
+                            <line x1="25" y1="25" x2="25" y2="75" stroke="#ffffff" stroke-width="4"/>
+                            <line x1="25" y1="75" x2="75" y2="75" stroke="#ffffff" stroke-width="4"/>
+                        </svg>
+                        <h4>Growth Marketing</h4>
+                        <p class="text-muted mt-2 mb-0">Estrategias basadas en datos para posicionamiento y captación de clientes globales.</p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-5 mt-4 text-center">
+            <h3 class="fw-bold mb-5">Conoce a Nuestro Equipo</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="card card-jjb p-4 border-0 h-100">
+                        <img src="img/Jose_Escobar.png" alt="José Escobar, Desarrollo y Arquitectura" class="rounded-circle img-fluid mx-auto d-block mb-3 team-photo">
+                        <h4 class="mb-1">José Escobar</h4>
+                        <p style="color: var(--acentuado); font-weight: 600;" class="mb-2">Desarrollo y Arquitectura</p>
+                        <p class="text-muted small mb-0">Estructura el código garantizando sistemas escalables y eficientes.</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="card card-jjb p-4 border-0 h-100">
+                        <img src="img/Jonathan_Ochoa.png" alt="Jonathan Ochoa, Consultoría TICs" class="rounded-circle img-fluid mx-auto d-block mb-3 team-photo">
+                        <h4 class="mb-1">Jonathan Ochoa</h4>
+                        <p style="color: var(--acentuado); font-weight: 600;" class="mb-2">Consultoría TICs</p>
+                        <p class="text-muted small mb-0">Especialista en auditar infraestructura e implementar herramientas.</p>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="card card-jjb p-4 border-0 h-100">
+                        <img src="img/Bernabe_Ruiz.png" alt="Bernabé Ruíz, Estrategia Digital" class="rounded-circle img-fluid mx-auto d-block mb-3 team-photo">
+                        <h4 class="mb-1">Bernabé Ruíz</h4>
+                        <p style="color: var(--acentuado); font-weight: 600;" class="mb-2">Estrategia Digital</p>
+                        <p class="text-muted small mb-0">Responsable de posicionar activos mediante SEO y análisis de métricas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina text-center">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 JJB Tech Consulting | José Escobar, Bernabé Ruiz, Jonathan Ochoa.</p>
+            <p class="mb-0">Universidad de Especialidades Espíritu Santo - Facultad de Ing. en Ciencias de la Computación</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
