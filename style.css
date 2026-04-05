@@ -1,0 +1,101 @@
+/* ==========================================================================
+UNIVERSIDAD DE ESPECIALIDADES ESPÍRITU SANTO
+FACULTAD DE INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN
+
+Materia: DESARROLLO DE APLICACIONES WEB
+Actividad 1: Estructura Base de un sitio web.
+ACTIVIDAD DEL PRIMER PARCIAL
+
+Autores: José Escobar, Bernabé Ruiz, Jonathan Ochoa
+Tutor: Ing. Alex Andrés Santamaría Philco, Mgs.
+Paralelo: A | Loja, Abril de 2026
+========================================================================== 
+*/
+
+/* Técnicas avanzadas CSS. 
+Definimos variables globales en :root para mantener consistencia en la paleta de colores con la facilidad de brindar el mantenimiento del código cómo equipo. */
+:root {
+    --primario: #0F172A; 
+    --acentuado: #2563EB; 
+    --acentuado-hover: #1D4ED8;
+    --fondo-sitio: #F8FAFC;
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-fuerte: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* Configuraciones generales del cuerpo para asegurar que el footer se mantenga abajo (flex-box) */
+body {
+    background-color: var(--fondo-sitio);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos creativos. 
+Implementamos un efecto visual "Glassmorphism" en el menú de navegación usando backdrop-filter, manteniéndolo fijo al hacer scroll con position: sticky. */
+.navbar-jjb {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand h1 { font-size: 1.5rem; color: var(--primario); font-weight: 800; margin: 0; }
+.nav-link { font-weight: 600; text-transform: uppercase; color: #64748B !important; transition: var(--transicion); }
+.nav-link:hover, .nav-link.active { color: var(--acentuado) !important; }
+
+/* Micro-interacciones para mejorar la experiencia del usuario (UX). 
+Las tarjetas se elevan al pasar el cursor (hover). */
+.card-jjb {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+    height: 100%;
+    background-color: #ffffff;
+}
+.card-jjb:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-fuerte);
+}
+.card-jjb h4 { color: var(--acentuado); font-weight: 700; }
+
+/* --- Estilos de Botones Personalizados --- */
+.btn-jjb {
+    background-color: var(--acentuado);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    transition: var(--transicion);
+}
+.btn-jjb:hover { background-color: var(--acentuado-hover); color: white; transform: translateY(-2px); }
+
+/* --- Control de Multimedia (Imágenes del Carrusel y Expertiz) --- */
+/* Garantizamos que las imágenes mantengan su proporción sin estirarse, usando object-fit */
+.carrusel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* --- Estilos Personalizados de Fotos de Equipo --- */
+/* Diseñamos las fotos reales del equipo para que sean circulares, con un borde corporativo y una micro-interacción al hacer hover. */
+.team-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid var(--acentuado);
+    transition: var(--transicion);
+}
+.card-jjb:hover .team-photo {
+    border-color: var(--acentuado-hover);
+    transform: scale(1.05);
+}
+
+/* --- Estilos del Pie de Página --- */
+.pie-pagina { background: var(--primario); color: #94A3B8; padding: 2rem 0; margin-top: auto; }
