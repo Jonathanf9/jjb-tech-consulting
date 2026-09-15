@@ -1,6 +1,6 @@
 
 ====================================================================
-PROYECTO: JJB Tech Consulting - Actividad 3 (JS, DOM y Validación)
+PROYECTO: JJB Tech Consulting - Actividad 4 (Buscador de Talentos)
 ASIGNATURA: Desarrollo de Aplicaciones Web (UCOM351)
 INSTITUCIÓN: Universidad Espíritu Santo (UEES)
 ====================================================================
@@ -9,52 +9,58 @@ INTEGRANTES:
 2. José Escobar
 3. Bernabé Ruiz
 
-DESCRIPCIÓN DE LA ENTREGA:
-Se presenta la evolución del proyecto JJB Tech Consulting, integrando
-dinamismo mediante JavaScript, manipulación del DOM y persistencia de 
-datos en el backend.
+PROFESOR: Dr. Alex Andrés Santamaría Philco
 
-CUMPLIMIENTO ESTRICTO DE LA RÚBRICA:
+DESCRIPCIÓN:
+Evolución del proyecto JJB Tech Consulting: Aplicación funcional que consume 
+la API de GitHub, implementa renderizado dinámico y gestiona estados de 
+asincronía profesional.
 
-- BLOQUE 1 (Conexión de Eventos y Control): 
-  Capturamos el formulario principal usando addEventListener('submit') 
-  sobre la etiqueta <form>. Implementamos event.preventDefault() como 
-  primera línea para evitar recargas de página. Utilizamos rigurosamente 
-  document.querySelector() para obtener el .value de la búsqueda y 
-  manejamos múltiples tipos de eventos (submit, input, blur, click).
-  
-- BLOQUE 2 (Validación de Formulario con Regex): 
-  Se validan en tiempo real 4 campos mediante Regex (Nombre, Email, 
-  Teléfono de 10 dígitos y Detalles del Proyecto). Cada campo despliega 
-  un mensaje específico y descriptivo debajo de este, el cual desaparece 
-  automáticamente al corregir el error. El botón submit se mantiene 
-  disabled mientras haya un solo error activo.
+CUMPLIMIENTO ESTRICTO DE LA RÚBRICA (ACTIVIDAD 4):
 
-- BLOQUE 3 (Manipulación del DOM y Estados Visuales): 
-  Se incluyen 3 estados visuales claramente diferenciados: Inicial, 
-  Buscando y Resultado. Todo se gestiona mediante classList.add() y 
-  classList.remove() (absolutamente prohibido manipular style directo). 
-  El estado intermedio inyecta el mensaje exacto "Buscando información 
-  de [valor]...". Por último, la función limpiarYResetear() aplica 
-  .reset() al formulario y lo regresa al estado inicial.
+--------------------------------------------------------------------
+BLOQUE 1: Consumo de API y Lógica Asíncrona.
+--------------------------------------------------------------------
+- Funciones Asíncronas: Uso estricto de async/await para fetch() y .json(), 
+  eliminando mezclas con .then()/.catch().
+- URL Dinámica: Construcción de peticiones mediante Template Literals 
+  basadas en el valor del input del usuario.
+- Validación Robusta: Verificación explícita de 'response.ok' antes de 
+  la conversión a JSON.
+- Control de Errores: Bloque try...catch que diferencia mensajes para 
+  errores 404, errores de servidor (5xx) y pérdida de conexión.
+- Transformación de Datos: Extracción de más de 3 propiedades del objeto 
+  JSON (avatar, login, followers, etc.) sin mostrar datos crudos.
 
-- BLOQUE 5 (Calidad y Estructura del Código): >   El script.js está separado y organizado con los comentarios de sección
-exactamente solicitados. Está modularizado en más de 3 funciones de
-responsabilidad única (validar, actualizar DOM, manejar submit). Se
-usa consistentemente let y const (cero uso de var), sin atributos
-onclick en el HTML, y no arroja ningún error ni warning en consola.
+--------------------------------------------------------------------
+BLOQUE 2: Renderizado Dinámico.
+--------------------------------------------------------------------
+- Inyección Eficiente: Uso de .forEach() para iterar resultados y creación 
+  de tarjetas (cards) mediante Template Literals.
+- Optimización del DOM: Implementación de 'createDocumentFragment()' para 
+  realizar una única operación de inserción, mejorando el rendimiento.
+- Limpieza de Interfaz: El contenedor se resetea (innerHTML = '') antes 
+  de cada nueva búsqueda.
+- Estados de UX: Implementación de los 4 estados requeridos:
+  1. Cargando (Spinner activo durante el fetch).
+  2. Datos OK (Visualización de tarjetas).
+  3. Sin resultados (Mensaje amigable).
+  4. Error (Interfaz de fallo con botón 'Reintentar').
+- Vista de Detalle: Ejecución de un SEGUNDO fetch() al seleccionar un 
+  usuario para mostrar información adicional en un Modal interactivo.
 
-VALOR AGREGADO: 
-Adelantándonos a los retos de consumo de API de la Actividad 4, el 
-proyecto integra un servidor Node.js (Express) y una base de datos local 
-(SQLite). Se utiliza fetch() asíncrono para registrar y recuperar los 
-datos desde el frontend de forma verdaderamente dinámica y profesional.
+--------------------------------------------------------------------
+BLOQUE 3: Sustentación y Exposición.
+--------------------------------------------------------------------
+- Demostración: Preparados para mostrar búsqueda exitosa, vista de 
+  detalle y simulación de error en vivo (Semana 8).
+- Explicación Técnica: Capacidad de desglosar el funcionamiento de 
+  fetch() y la lógica de renderizado directamente desde el código fuente.
+- Defensa del Proyecto: Justificación técnica de las decisiones tomadas 
+  (rendimiento, manejo de estados y arquitectura asíncrona).
 
+--------------------------------------------------------------------
+CONFIGURACIÓN Y ACCESO:
 
-VERIFIACIÓN DE BACKEND DE MANERA LOCAL:
-
-1. Ejecutamos 'npm install' en la raíz.
-2. Iniciamos el servidor con 'node server.js'.
-3. Abrimos la sección de 'contacto.html' en el navegador.
-4 Verificamos los datos alojados en nuestra base de datos previamente registrados en nuestro formulario.
+- Requisito: Conexión a internet para el consumo de la API de GitHub.
 ====================================================================
