@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ACTIVIDAD 2: DISEÑO RESPONSIVO, FLEXBOX Y CSS GRID
+   ACTIVIDAD 2 y 3: DISEÑO RESPONSIVO, FLEXBOX Y CSS GRID
    ========================================================================== */
 
 /* 1. Coherencia Visual y Variables Globales */
@@ -115,4 +115,21 @@ body {
 @media (max-width: 576px) {
     .services-grid { grid-template-columns: 1fr; }
     .carrusel-img { height: 250px; }
+}
+
+/* ==========================================================================
+   AGREGADO PARA LA ACTIVIDAD 3: CLASES DE ESTADOS VISUALES Y DOM (BLOQUE 3)
+   ========================================================================== */
+.is-invalid {
+    border-color: #DC2626 !important;
+    background-image: none !important;
+}
+
+.is-valid {
+    border-color: #16A34A !important;
+    background-image: none !important;
+}
+
+.d-none {
+    display: none !important;
 }
