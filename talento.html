@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Talentos | JJB Tech Consulting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="container py-5 text-center">
+        <h2 class="fw-bold mb-4">Buscador de Talentos Tech (GitHub API)</h2>
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6 d-flex gap-2">
+                <input type="text" id="inputBusqueda" class="form-control" placeholder="Ej: react, python, java...">
+                <button id="btnBuscarTalento" class="btn btn-dark">Buscar Talentos</button>
+            </div>
+        </div>
+
+        <div id="ux-states-container">
+            
+            <div id="estado-inicial" class="text-muted">
+                <h4>🔍</h4>
+                <p>Ingresa una tecnología para buscar perfiles en GitHub.</p>
+            </div>
+
+            <div id="estado-cargando" class="d-none">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2 fw-bold">Consultando la API de GitHub...</p>
+            </div>
+
+            <div id="estado-error" class="d-none text-danger">
+                <h4>⚠️ Error</h4>
+                <p id="texto-error">Ha ocurrido un error.</p>
+                <button id="btnReintentar" class="btn btn-outline-danger mt-2">Reintentar Búsqueda</button>
+            </div>
+
+            <div id="estado-resultados" class="row g-4 d-none">
+                </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div id="modal-cargando" class="d-none"><div class="spinner-border text-dark"></div></div>
+                <div id="modal-contenido" class="d-none">
+                    <img id="mod-avatar" src="" class="rounded-circle mb-3 border shadow-sm" width="120" alt="Avatar">
+                    <h3 id="mod-nombre" class="fw-bold"></h3>
+                    <p class="text-muted" id="mod-bio"></p>
+                    <hr>
+                    <div class="d-flex justify-content-around mt-3">
+                        <div><h5 id="mod-repos" class="fw-bold mb-0"></h5><small>Repositorios</small></div>
+                        <div><h5 id="mod-followers" class="fw-bold mb-0"></h5><small>Seguidores</small></div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary mt-4" data-bs-dismiss="modal">Cerrar Perfil</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="api.js"></script>
+</body>
+</html>
