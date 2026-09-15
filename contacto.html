@@ -39,36 +39,74 @@
             </div>
             
             <div class="col-lg-6">
-                <form id="formularioContacto" class="card card-jjb p-4 shadow-lg border-0 text-start">
-                    <div class="mb-3">
-                        <label for="nombre-cliente" class="form-label fw-bold"><i class="fas fa-building me-2" style="color: var(--jjb-accent);"></i>Empresa o Nombre:</label>
-                        <input type="text" id="nombre-cliente" class="form-control" required placeholder="Ej: TechCorp S.A.">
+                <div id="contenedorFormulario">
+                    <form id="formularioContacto" class="card card-jjb p-4 shadow-lg border-0 text-start" novalidate>
+                        
+                        <div class="mb-3">
+                            <label for="nombre-cliente" class="form-label fw-bold"><i class="fas fa-building me-2" style="color: var(--jjb-accent);"></i>Empresa o Nombre:</label>
+                            <input type="text" id="nombre-cliente" class="form-control" placeholder="Ej: TechCorp S.A.">
+                            <span class="text-danger small d-none mt-1 error-mensaje"><i class="fas fa-exclamation-circle"></i> El nombre debe tener al menos 3 caracteres y solo letras.</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="correo-negocio" class="form-label fw-bold"><i class="fas fa-envelope me-2" style="color: var(--jjb-accent);"></i>Correo Electrónico:</label>
+                            <input type="email" id="correo-negocio" class="form-control" placeholder="contacto@tuempresa.com">
+                            <span class="text-danger small d-none mt-1 error-mensaje"><i class="fas fa-exclamation-circle"></i> Ingresa un correo electrónico válido (ej: usuario@dominio.com).</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefono-cliente" class="form-label fw-bold"><i class="fas fa-phone me-2" style="color: var(--jjb-accent);"></i>Teléfono / Celular:</label>
+                            <input type="tel" id="telefono-cliente" class="form-control" placeholder="Ej: 0991234567">
+                            <span class="text-danger small d-none mt-1 error-mensaje"><i class="fas fa-exclamation-circle"></i> El teléfono debe contener exactamente 10 dígitos numéricos.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pais-cliente" class="form-label fw-bold"><i class="fas fa-globe me-2" style="color: var(--jjb-accent);"></i>País:</label>
+                            <select id="pais-cliente" class="form-select">
+                                <option value="" disabled selected>Selecciona tu país...</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="México">México</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Perú">Perú</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="detalles-proyecto" class="form-label fw-bold"><i class="fas fa-project-diagram me-2" style="color: var(--jjb-accent);"></i>Requerimientos Técnicos:</label>
+                            <textarea id="detalles-proyecto" class="form-control" rows="4" placeholder="Describe tu necesidad (mínimo 10 caracteres)..."></textarea>
+                            <span class="text-danger small d-none mt-1 error-mensaje"><i class="fas fa-exclamation-circle"></i> La descripción es muy corta, detalla un poco más (mín. 10 caracteres).</span>
+                        </div>
+                        
+                        <button type="submit" id="btnSubmit" class="btn btn-jjb w-100" disabled><i class="fas fa-paper-plane me-2"></i>Enviar Solicitud</button>
+                    </form>
+                </div>
+
+                <div id="contenedorBuscando" class="card card-jjb p-5 shadow-lg border-0 text-center d-none">
+                    <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                        <span class="visually-hidden">Cargando...</span>
                     </div>
+                    <h4 class="fw-bold text-dark" id="texto-buscando">Procesando solicitud...</h4>
+                    <p class="text-muted">Conectando con nuestros especialistas.</p>
+                </div>
+
+                <div id="contenedorResultado" class="card card-jjb p-4 shadow-lg border-0 text-center d-none">
+                    <div class="mb-3 text-success">
+                        <i class="fas fa-check-circle" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="fw-bold text-dark">¡Solicitud Registrada!</h3>
+                    <p class="text-muted">Hemos generado un ticket basado en tu consulta:</p>
                     
-                    <div class="mb-3">
-                        <label for="correo-negocio" class="form-label fw-bold"><i class="fas fa-envelope me-2" style="color: var(--jjb-accent);"></i>Correo Electrónico:</label>
-                        <input type="email" id="correo-negocio" class="form-control" required placeholder="contacto@tuempresa.com">
+                    <div class="bg-light p-3 rounded-3 text-start mb-4">
+                        <p class="mb-1"><strong>Cliente:</strong> <span id="res-nombre"></span></p>
+                        <p class="mb-1"><strong>Contacto:</strong> <span id="res-email"></span></p>
+                        <p class="mb-1"><strong>País:</strong> <span id="res-pais"></span></p>
+                        <p class="mb-0"><strong>Ticket asignado a:</strong> Equipo de Consultoría TICs</p>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="pais-cliente" class="form-label fw-bold"><i class="fas fa-globe me-2" style="color: var(--jjb-accent);"></i>País:</label>
-                        <select id="pais-cliente" class="form-select" required>
-                            <option value="" disabled selected>Selecciona tu país...</option>
-                            <option value="ec">Ecuador</option>
-                            <option value="mx">México</option>
-                            <option value="co">Colombia</option>
-                            <option value="pe">Perú</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="detalles-proyecto" class="form-label fw-bold"><i class="fas fa-project-diagram me-2" style="color: var(--jjb-accent);"></i>Requerimientos Técnicos:</label>
-                        <textarea id="detalles-proyecto" class="form-control" rows="4" required placeholder="Describe si necesitas desarrollo web, consultoría..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-jjb w-100"><i class="fas fa-paper-plane me-2"></i>Enviar Solicitud</button>
-                </form>
+                    <button id="btnNuevaConsulta" class="btn btn-outline-primary w-100"><i class="fas fa-undo me-2"></i>Realizar nueva consulta</button>
+                </div>
+
             </div>
         </div>
     </main>
@@ -80,6 +118,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
